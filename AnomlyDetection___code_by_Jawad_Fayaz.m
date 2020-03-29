@@ -56,9 +56,8 @@ if size(X,2) == 2
 
     %  Visualizing the fit
     visualizeFit(X,  mu, sigma2);
-    xlabel('X(:,1)');
-    ylabel('X(:,2)');
-
+    xlabel('X(:,1)','fontWeight','bold');
+    ylabel('X(:,2)','fontWeight','bold');
 
     %% ---------- Finding Outliers ----------
     %  Finding a good epsilon threshold using a cross-validation set and
@@ -75,8 +74,11 @@ if size(X,2) == 2
     hold on
     plot(X(Outliers, 1), X(Outliers, 2), 'ro', 'LineWidth', 2, 'MarkerSize', 10);
     hold off
-    
-    
+    grid on
+    axis tight
+    set(gca,'fontsize',14,'FontName', 'Times New Roman','LineWidth', 1.25,'TickDir','out','TickLength', [0.005 0.005])
+
+
 
 elseif size(X,2) > 2
     %% ================== Multidimensional Outliers =================== %%
